@@ -33,7 +33,7 @@ function isContentTypeBinaryMimeType(params) {
 function mapApiGatewayEventToHttpRequest(event, context, socketPath) {
     const headers = event.headers || {} // NOTE: Mutating event.headers; prefer deep clone of event.headers
     const eventWithoutBody = Object.assign({}, event)
-    delete eventWithoutBody.body
+    //delete eventWithoutBody.body
 
     headers['x-apigateway-event'] = encodeURIComponent(JSON.stringify(eventWithoutBody))
     headers['x-apigateway-context'] = encodeURIComponent(JSON.stringify(context))
